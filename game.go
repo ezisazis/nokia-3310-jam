@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"image/color"
 	"os"
 
@@ -73,7 +72,7 @@ func update(screen *ebiten.Image) error {
 
 	// User crashed with wall
 	if game.Map[playerPosition][game.MapPosition] == 1 {
-		return errors.New("Game Over")
+		os.Exit(0)
 	}
 
 	// Screen update and player movement is reduced to 1 in every 60 frames
